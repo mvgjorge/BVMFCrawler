@@ -13,7 +13,7 @@ First you have to install python3
 
 ###Usage:
 
->python BVMFCrawler.py FII code.
+>python BVMFCrawler.py fii_code.
 
 ###Ex.:
 
