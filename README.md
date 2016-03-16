@@ -13,8 +13,8 @@ First you have to install python3. After that, install all the dependencies
 
 ###Usage:
 
->python BVMFCrawler.py fii_code.
+>python BVMFCrawler.py fii_code folder.
 
 ###Ex.:
 
->python BVMFCrawler.py PQDP11
+>python BVMFCrawler.py PQDP11 C:\My_FIIs
