@@ -24,7 +24,7 @@ def download_file(url, local_filename):
 
 
 def get_documents(url):
-    html_page = requests.get(url);
+    html_page = requests.get(url)
     soup = BeautifulSoup(html_page.content, "html.parser")
     for link in soup.findAll('a'):
         doc = link.get('href')
@@ -34,11 +34,11 @@ def get_documents(url):
 
 def main():
     fundo = sys.argv[1]
-    url = DOCUMENTS_URL.format(fundo);
+    url = DOCUMENTS_URL.format(fundo)
     get_documents(url)
-    url = DEMOFINANCEIRAS_URL.format(fundo);
+    url = DEMOFINANCEIRAS_URL.format(fundo)
     get_documents(url)
-    url = OUTROSDOCS_URL.format(fundo);
+    url = OUTROSDOCS_URL.format(fundo)
     get_documents(url)
 
 
