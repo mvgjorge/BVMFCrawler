@@ -2,7 +2,7 @@ A tool to get all FII documents from the Bovespa site.
 
 usage:
 
-python BVMFCrawler.py <FII code>.
+python BVMFCrawler.py FII code.
 
 Ex.
 
