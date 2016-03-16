@@ -5,7 +5,7 @@ A tool to get all FII documents from Bovespa's site.
 
 ###Installation:
 
-First you have to install python3
+First you have to install python3. After that, install all the dependencies
 
 >pip install requests
 
