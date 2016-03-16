@@ -10,3 +10,11 @@ A tool to get all FII documents from Bovespa's site.
 ###Ex.:
 
 >python BVMFCrawler.py PQDP11
+
+###Installation
+
+First you have to install python3
+
+>pip install requests
+
+>pip install bs4
