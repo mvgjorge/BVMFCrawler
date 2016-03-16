@@ -1,7 +1,7 @@
 BVMF FII Crawler
 ===================
 
-A tool to get all FII documents from the Bovespa site.
+A tool to get all FII documents from Bovespa's site.
 
 ###Usage:
 
