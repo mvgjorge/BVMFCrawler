@@ -1,9 +1,12 @@
+BVMF FII Crawler
+===================
+
 A tool to get all FII documents from the Bovespa site.
 
-usage:
+###Usage:
 
-python BVMFCrawler.py FII code.
+>python BVMFCrawler.py FII code.
 
-Ex.
+###Ex.:
 
-python BVMFCrawler.py PQDP11
+>python BVMFCrawler.py PQDP11
