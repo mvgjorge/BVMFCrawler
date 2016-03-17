@@ -1,6 +1,8 @@
+import string
 import sys
 import requests
 import os
+import unicodedata
 from bs4 import BeautifulSoup
 
 DOCUMENTS_URL = 'http://bvmf.bmfbovespa.com.br/Fundos-Listados/FundosListadosDetalhe.aspx?Sigla={}' \
@@ -13,9 +15,16 @@ OUTROSDOCS_URL = 'http://bvmf.bmfbovespa.com.br/Fundos-Listados/FundosListadosDe
                  '&tipoFundo=Imobiliario&aba=subAbaOutrosDocumentos&idioma=pt-br'
 
 
+validFilenameChars = "-_.() %s%s" % (string.ascii_letters, string.digits)
+
+
+def remove_disallowed_filename_chars(filename):
+    return "".join([x if x.isalnum() else "_" for x in filename])
+
+
 # given a PDF url, download the document to the folder specifiec
 def download_file(url, local_filename, folder):
-    path = os.path.join(folder, local_filename.replace('/', ' ') + '.pdf')
+    path = os.path.join(folder, remove_disallowed_filename_chars(local_filename) + '.pdf')
     if os.path.isfile(path):
         return
     print("Fazendo download de {}".format(local_filename))
