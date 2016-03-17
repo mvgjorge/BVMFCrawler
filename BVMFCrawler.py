@@ -15,16 +15,16 @@ OUTROSDOCS_URL = 'http://bvmf.bmfbovespa.com.br/Fundos-Listados/FundosListadosDe
                  '&tipoFundo=Imobiliario&aba=subAbaOutrosDocumentos&idioma=pt-br'
 
 
-validFilenameChars = "-_.() %s%s" % (string.ascii_letters, string.digits)
-
-
 def remove_disallowed_filename_chars(filename):
-    return "".join([x if x.isalnum() else "_" for x in filename])
+    corrected_file = "".join([x if x.isalnum() else "_" for x in filename])
+    while "__" in corrected_file:
+        corrected_file = corrected_file.replace("__", "_")
+    return corrected_file
 
 
 # given a PDF url, download the document to the folder specifiec
 def download_file(url, local_filename, folder):
-    encoded_file = remove_disallowed_filename_chars(local_filename);
+    encoded_file = remove_disallowed_filename_chars(local_filename)
     path = os.path.join(folder, encoded_file + '.pdf')
     if os.path.isfile(path):
         return
