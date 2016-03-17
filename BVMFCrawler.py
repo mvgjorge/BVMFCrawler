@@ -24,10 +24,11 @@ def remove_disallowed_filename_chars(filename):
 
 # given a PDF url, download the document to the folder specifiec
 def download_file(url, local_filename, folder):
-    path = os.path.join(folder, remove_disallowed_filename_chars(local_filename) + '.pdf')
+    encoded_file = remove_disallowed_filename_chars(local_filename);
+    path = os.path.join(folder, encoded_file + '.pdf')
     if os.path.isfile(path):
         return
-    print("Fazendo download de {}".format(local_filename))
+    print("Fazendo download de {}".format(encoded_file))
     r = requests.get(url, stream=True)
     with open(path, 'wb') as f:
         for chunk in r.iter_content(chunk_size=1024):
